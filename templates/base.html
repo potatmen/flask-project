@@ -26,18 +26,18 @@
                             <li><a class="dropdown-item" href="{{url_for('home')}}">Home</a></li>
                             <li><a class="dropdown-item" href="{{url_for('login')}}">Login</a></li>
                             <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('view')}}">View all users</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('delete')}}">Delete user</a></li>
+
 
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
-    <h1>Anton's Webpage</h1>
+    <h3>Anton's Webpage</h3>
+    <h4>You can tap on dropdown menu to see list of all functions.</h4>
     <div class="container-fluid">
         {% block content%}
         {% endblock %}

@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block title%}Delete user{%endblock%}
+{%block content%}
+<p>If you want to delete user you need to type full name and email.</p>
+<form method="post">
+    <p>Name: <input type='text' name='name' placeholder="Enter your Name"></p>
+    <p>Email: <input type='text' name='email' placeholder="Enter your Email"></p>
+    <p><input type="submit" value='submit'></p>
+</form>
+{%endblock%}

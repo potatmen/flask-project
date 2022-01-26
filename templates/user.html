@@ -3,9 +3,7 @@
 {%block content%}
 {% with messages = get_flashed_messages() %}
 {%if messages%}
-{%for msg in messages%}
-<p>{{msg}}</p>
-{%endfor%}
+<p>{{messages[-1]}}</p>
 {%endif%}
 {%endwith%}
 <form action="" method="POST">

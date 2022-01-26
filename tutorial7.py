@@ -70,7 +70,7 @@ def user():
         return render_template('user.html')
     else:
         flash('You are not logged in')
-        return redirect(url_for('login'))
+        return redirect(url_for('home'))
 
 
 @app.route('/logout')
@@ -79,6 +79,22 @@ def logout():
     session.pop('user', None)
     session.pop('email', None)
     return redirect(url_for('login'))
+@app.route('/delete',methods=['POST','GET'])
+def delete():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        found_user = users.query.filter_by(name=name,email=email).first()
+        if not found_user is None:
+            db.session.delete(found_user)
+            db.session.commit()
+            if 'user' in session:
+                session.pop('user',None)
+                session.pop('email',None)
+        return redirect(url_for('login'))
+    else:
+        return render_template('delete.html')
+
 
 
 if __name__ == '__main__':
